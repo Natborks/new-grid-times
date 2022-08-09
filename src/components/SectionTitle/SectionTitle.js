@@ -1,15 +1,13 @@
-import React from 'react';
+import React from "react";
 
-import styled from 'styled-components/macro';
+import styled from "styled-components/macro";
 
 const SectionTitle = ({ children, cornerLink }) => {
   return (
     <Wrapper>
       <Title>{children}</Title>
       {cornerLink && (
-        <CornerLink href={cornerLink.href}>
-          {cornerLink.content}
-        </CornerLink>
+        <CornerLink href={cornerLink.href}>{cornerLink.content}</CornerLink>
       )}
     </Wrapper>
   );
@@ -19,6 +17,7 @@ const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: baseline;
+  margin-top: 8px;
 `;
 
 const Title = styled.h2`

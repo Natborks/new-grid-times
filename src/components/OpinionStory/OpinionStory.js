@@ -1,5 +1,6 @@
-import React from 'react';
-import styled from 'styled-components/macro';
+import React from "react";
+import styled from "styled-components/macro";
+import { QUERIES } from "../../constants";
 
 const OpinionStory = ({ id, title, author, avatar }) => {
   return (
@@ -17,6 +18,10 @@ const OpinionStory = ({ id, title, author, avatar }) => {
 
 const Wrapper = styled.article`
   color: var(--color-gray-900);
+
+  @media ${QUERIES.tabletOnly} {
+    flex: 1;
+  }
 `;
 
 const Avatar = styled.img`
@@ -25,6 +30,17 @@ const Avatar = styled.img`
   height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  float: right;
+  margin-left: 20px;
+
+  @media ${QUERIES.tabletOnly} {
+    float: revert;
+    margin-left: revert;
+  }
+
+  @media ${QUERIES.laptopAndUp} {
+    margin-left: 16px;
+  }
 `;
 
 const AuthorName = styled.p`
